@@ -1,1 +1,1 @@
-## This repo is for exercises in the Classification module
+## This repo for exercise work at Codeup by model.
