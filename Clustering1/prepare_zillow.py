@@ -91,3 +91,80 @@ def convert_numerical_object_to_int(df):
     for col in cols_to_numeric:
         df[[col]] = df[[col]].astype(int)
     return df
+
+def drop_columns(df):
+    df.drop(columns=['airconditioningtypeid',
+    'airconditioningdesc',
+    'architecturalstyletypeid',
+    'architecturalstyledesc',
+    'basementsqft',
+    'buildingclasstypeid',
+    'buildingqualitytypeid',
+    'buildingclassdesc',
+    'decktypeid',
+    'finishedfloor1squarefeet',
+    'finishedsquarefeet12',
+    'finishedsquarefeet13',
+    'finishedsquarefeet15',
+    'finishedsquarefeet50',
+    'finishedsquarefeet6',
+    'fireplacecnt',
+    'garagecarcnt',
+    'garagetotalsqft',
+    'hashottuborspa',
+    'heatingorsystemtypeid',
+    'heatingorsystemdesc',
+    'poolcnt',
+    'poolsizesum',
+    'pooltypeid10',
+    'pooltypeid2',
+    'pooltypeid7',
+    'propertyzoningdesc',
+    'rawcensustractandblock',
+    'regionidcity',
+    'regionidneighborhood',
+    'storytypeid',
+    'storydesc',
+    'threequarterbathnbr',
+    'typeconstructiontypeid',
+    'typeconstructiondesc',
+    'unitcnt',
+    'yardbuildingsqft17',
+    'yardbuildingsqft26',
+    'numberofstories',
+    'fireplaceflag',
+    'taxdelinquencyflag',
+    'taxdelinquencyyear',
+    'censustractandblock'], axis=1, inplace=True)
+    return df
+
+def remove_bad_zips(df):
+    df.drop(df.loc[df['regionidzip'] > 100000].index, inplace=True)
+    return df
+
+def drop_under_450_sqft(df):
+    df.drop(df.loc[df['calculatedfinishedsquarefeet'] < 450].index, inplace=True)
+    return df
+
+def fill_year(df):
+    df['yearbuilt'].fillna(1960, inplace=True)
+    return df
+
+def drop_na(df):
+    df.dropna(axis=0, inplace=True)
+    return df
+
+
+
+def maggie_remove_outliers(df):
+    keys = ['bathroomcnt','bedroomcnt','calculatedfinishedsquarefeet',
+                          'structuretaxvaluedollarcnt','landtaxvaluedollarcnt']
+    values = [(1,7), (1,7), (500,8000), (25000,2000000), (10000,2500000)]
+
+    dictionary = dict(zip(keys, values))
+
+    for key, value in dictionary.items():
+        df = df[df[key] >= value[0]]
+        df = df[df[key] <= value[1]]
+    return df
+
