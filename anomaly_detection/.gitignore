@@ -1,4 +1,5 @@
 .csv
-.txt
+curr_access.txt
 Untitled.ipynb
 log_exercise.ipynb
+env.py
