@@ -1,1 +1,1 @@
-## This repo for exercise work at Codeup by model.
+## This repo is for project and course work completed while at Codeup.  Python was used as the scripting language.  Data was obtained through SQL databases, web scraping, and API's.  Different methodologies were applied based on the goal of the project.
