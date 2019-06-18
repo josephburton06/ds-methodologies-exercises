@@ -1,1 +1,1 @@
-### This repo has a group project completed at Codeup in which README files were obtained from GitHub repos. NLP was used to predict the primary coding language used in the repo based on the README file.
+### This repo has a group project completed at Codeup in which README files were obtained from GitHub repos. NLP was used to predict the primary coding language used in the repo based on the README file.  During a follow-up iteration, the predictions based on were content were combined with other attributes such as word count, percent of words lost due to stop words, etc.
