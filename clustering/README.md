@@ -1,1 +1,1 @@
-## This is a repo for clustering projects at Codeup.
+## Clustering models, such as KMeans, were used to group similar home sales using the Zillow dataset. Regression was then used to predict the log error for each observation.
