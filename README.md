@@ -12,3 +12,4 @@
 
 ## Anomaly Detection, and other methods, were used to identify anomalies in the log history of school curriculum.  Data was obtained through an API, cleaned, visualized, and then analyzed.
 
+## NLP was used to classify Github README files to predict the primary language the repo was written in.  Data was gathered through ethical webscraping.  In addition to a focus on word content, a reiteration was completed to combine the NLP prediction as feature used in a classification model that also included items such as word count, percent of stop words dropped, etc.
